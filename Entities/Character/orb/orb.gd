@@ -35,11 +35,18 @@ func _spawn(path_to_object:String)->void:
 	add_child(object)
 
 func _act()->void:
+	var object:Array[String] = Referentiel.get_ref()
+	
 	_spawn("")
 	
 func _idle()->void:
 	var pos:Vector2 = Vector2(global_position.x,possible_location.pick_random().y)
-	_move(pos,1)
+	
+	# move idle
+	var nb_time:int = randi_range(1,5)
+	for i:int in range(nb_time):
+		_move(pos,_get_cooldown()/nb_time)
+		await get_tree().create_timer(nb_time).timeout
 	
 func _move(pos:Vector2,time:float)->void:
 	var tween:Tween = get_tree().create_tween()

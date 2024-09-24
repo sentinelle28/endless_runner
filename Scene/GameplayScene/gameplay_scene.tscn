@@ -18,8 +18,9 @@ size = Vector2(88, 360)
 [node name="Player" parent="." instance=ExtResource("1_32voi")]
 position = Vector2(125, 250)
 
-[node name="Orb" parent="." instance=ExtResource("2_0pdwj")]
+[node name="Orb" parent="." node_paths=PackedStringArray("possible_points") instance=ExtResource("2_0pdwj")]
 position = Vector2(584, 262)
+possible_points = NodePath("../Possible_points")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(348, 262)
