@@ -1,3 +1,80 @@
-[gd_scene format=3 uid="uid://duwqics5lukxb"]
+[gd_scene load_steps=9 format=3 uid="uid://duwqics5lukxb"]
+
+[ext_resource type="PackedScene" uid="uid://bmkt6h1e2p06b" path="res://Entities/Character/Player/player.tscn" id="1_32voi"]
+[ext_resource type="PackedScene" uid="uid://b7up112qdud2s" path="res://Entities/Character/orb/orb.tscn" id="2_0pdwj"]
+[ext_resource type="Texture2D" uid="uid://cmqg8080qeeds" path="res://asset/background/stringstar fields/background_0.png" id="3_fiqyx"]
+[ext_resource type="Texture2D" uid="uid://cjknkbvdx831t" path="res://asset/background/stringstar fields/background_1.png" id="4_cs33h"]
+[ext_resource type="Texture2D" uid="uid://blufna3b0r6lv" path="res://asset/background/stringstar fields/background_2.png" id="5_s61u0"]
+[ext_resource type="PackedScene" uid="uid://ufiq06nhnnmt" path="res://Common/deleter/deleter.tscn" id="6_fwn15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg2xu"]
+size = Vector2(576, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggd3"]
+size = Vector2(88, 360)
 
 [node name="GameplayScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_32voi")]
+position = Vector2(125, 250)
+
+[node name="Orb" parent="." instance=ExtResource("2_0pdwj")]
+position = Vector2(584, 262)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(348, 262)
+zoom = Vector2(2, 2)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+
+[node name="background_1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(348, 262)
+scale = Vector2(2, 2)
+texture = ExtResource("3_fiqyx")
+
+[node name="background_2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(348, 262)
+scale = Vector2(2, 2)
+texture = ExtResource("4_cs33h")
+
+[node name="background_3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(348, 262)
+scale = Vector2(2, 2)
+texture = ExtResource("5_s61u0")
+
+[node name="bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
+position = Vector2(348, 90.5)
+shape = SubResource("RectangleShape2D_hg2xu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds"]
+position = Vector2(348, 433)
+shape = SubResource("RectangleShape2D_hg2xu")
+
+[node name="Possible_points" type="Node2D" parent="."]
+
+[node name="point_1" type="Node2D" parent="Possible_points"]
+position = Vector2(664, 144)
+
+[node name="point_2" type="Node2D" parent="Possible_points"]
+position = Vector2(664, 208)
+
+[node name="point_3" type="Node2D" parent="Possible_points"]
+position = Vector2(664, 272)
+
+[node name="point_4" type="Node2D" parent="Possible_points"]
+position = Vector2(664, 336)
+
+[node name="point_5" type="Node2D" parent="Possible_points"]
+position = Vector2(664, 400)
+
+[node name="Deleter" parent="." instance=ExtResource("6_fwn15")]
+position = Vector2(-328, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deleter"]
+position = Vector2(-20, 212)
+shape = SubResource("RectangleShape2D_rggd3")

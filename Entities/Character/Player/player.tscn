@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmkt6h1e2p06b"]
+
+[ext_resource type="Script" path="res://Entities/Character/Player/player.gd" id="1_52mmu"]
+[ext_resource type="Texture2D" uid="uid://c4dr0vaof0wm2" path="res://asset/player/witch_on_broomstick-1.2/PNG/24x32/witch-001-NESW.png" id="1_rdial"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqhht"]
+size = Vector2(22, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kif5i"]
+atlas = ExtResource("1_rdial")
+region = Rect2(0, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxer6"]
+atlas = ExtResource("1_rdial")
+region = Rect2(24, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah0ji"]
+atlas = ExtResource("1_rdial")
+region = Rect2(48, 32, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j3of"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kif5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxer6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah0ji")
+}],
+"loop": true,
+"name": &"new",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_52mmu")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_fqhht")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8j3of")
+animation = &"new"
+autoplay = "new"
+frame_progress = 0.457807

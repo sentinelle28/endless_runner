@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnelvc4o1dvxr"]
+
+[ext_resource type="Script" path="res://Common/falling_object/class/falling_object.gd" id="1_ndmmv"]
+
+[node name="Falling_object" type="Area2D"]
+script = ExtResource("1_ndmmv")

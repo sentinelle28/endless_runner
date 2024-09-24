@@ -1,1 +1,13 @@
+res://Entities/Character/Player/player.tscn
+res://Entities/Character/Player/player.gd
+res://Scene/GameplayScene/gameplay_scene.tscn
 res://Scene/Main/main.tscn
+res://Common/falling_object/class/falling_object.tscn
+res://Common/falling_object/class/falling_object.gd
+res://Autolaud/Speed/Speed.gd
+res://Autolaud/Score/Score.tscn
+res://Autolaud/Score/score.gd
+res://Entities/Character/orb/orb.tscn
+res://Entities/Character/orb/orb.gd
+res://Common/deleter/deleter.gd
+res://Common/deleter/deleter.tscn
