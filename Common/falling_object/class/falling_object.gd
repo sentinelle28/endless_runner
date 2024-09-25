@@ -1,11 +1,22 @@
-extends Area2D
+extends CharacterBody2D
 
 class_name Falling_Object
-@export var speed:int = 1000
+@export var speed:int = 10
 
 func _ready() -> void:
 	speed = Speed.speed_value
 
 
 func _process(delta: float) -> void:
-	global_position.y -= speed * delta
+	velocity.x = -(speed * delta)
+	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body._take_dmg(1)
+		
+		#no bullet
+		for child in get_parent().get_children():
+			if child is Falling_Object:
+				get_parent().remove_child(child)

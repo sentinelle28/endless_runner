@@ -24,3 +24,11 @@ MainMusic="*res://Autolaud/MainMusic/main_music.tscn"
 Speed="*res://Autolaud/Speed/Speed.gd"
 Score="*res://Autolaud/Score/Score.tscn"
 Referentiel="*res://Autolaud/ref_of_object/referentiel.gd"
+DeathMenu="*res://Autolaud/paused_menu/Death_Menu.tscn"
+
+[input]
+
+reset={
+"deadzone": 0.5,
+"events": []
+}

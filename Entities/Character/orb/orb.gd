@@ -2,51 +2,53 @@ extends Node2D
 
 
 @export var possible_points:Node2D
-var possible_location:Array[Vector2] = []
+var possible_location:Array[float] = []
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_get_points()
-
+	_act()
 
 func _get_points()->void: #init
 	for points:Node2D in possible_points.get_children():
-		possible_location.append(points.global_position)
+		possible_location.append(points.global_position.y)
 
 
 func _on_timer_timeout() -> void:
 	$Timer.start(_get_cooldown())
+	_act()
+	_idle()
 	
 
 func _get_cooldown()->float:
 	return Speed.cooldown
 
 func _spawn(path_to_object:String)->void:
-	var object = load(path_to_object).instantiate()
-	var pos :Vector2= possible_location.pick_random()
+	var object:Falling_Object = load(path_to_object).instantiate()
+	var pos :Vector2 = possible_points.get_children().pick_random().global_position
+	
 	_move(_get_pos(pos),_get_cooldown())
-	
 	await get_tree().create_timer(_get_cooldown()).timeout # to change
-	
-	
-	object.global_position = pos
 	add_child(object)
+	object.global_position = pos
 
 func _act()->void:
 	var object:Array[String] = Referentiel.get_ref()
 	
-	_spawn("")
+	_spawn(object[1])
 	
 func _idle()->void:
-	var pos:Vector2 = Vector2(global_position.x,possible_location.pick_random().y)
-	
 	# move idle
 	var nb_time:int = randi_range(1,5)
 	for i:int in range(nb_time):
-		_move(pos,_get_cooldown()/nb_time)
-		await get_tree().create_timer(nb_time).timeout
+		var new_array:Array[float] = Array(possible_location)
+		new_array.erase(global_position.y)
+		var pos:Vector2 = Vector2(global_position.x,new_array.pick_random())
+		var duration:float = _get_action_cooldown()/nb_time
+		_move(pos,duration)
+		await get_tree().create_timer(duration).timeout
 	
 func _move(pos:Vector2,time:float)->void:
 	var tween:Tween = get_tree().create_tween()
@@ -54,3 +56,6 @@ func _move(pos:Vector2,time:float)->void:
 
 func _get_pos(pos:Vector2)->Vector2:
 	return Vector2(global_position.x,pos.y)
+
+func _get_action_cooldown()->float:
+	return $Timer.time_left

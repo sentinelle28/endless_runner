@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnelvc4o1dvxr"]
+[gd_scene load_steps=3 format=3 uid="uid://dnelvc4o1dvxr"]
 
 [ext_resource type="Script" path="res://Common/falling_object/class/falling_object.gd" id="1_ndmmv"]
 
-[node name="Falling_object" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0hgp"]
+size = Vector2(16, 16)
+
+[node name="Falling_object" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ndmmv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u0hgp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

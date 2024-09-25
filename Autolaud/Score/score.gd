@@ -3,11 +3,14 @@ extends Node
 
 var score_value:int = 0
 var score_mult:int = 1
+var highscore:int = 0
 
 
 
 func _add_score(value:int)->void:
 	score_value += value*score_mult
+	if score_value > highscore:
+		highscore = score_value
 
 func _reset_score()->void:
 	score_mult = 1
@@ -29,3 +32,9 @@ func get_score()->int:
 	
 func get_mult()->int:
 	return score_mult
+
+func get_highscore()->int:
+	return highscore
+	
+func _update_mult()->void:
+	score_mult += 1
