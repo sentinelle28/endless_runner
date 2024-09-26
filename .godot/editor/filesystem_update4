@@ -1,10 +1,10 @@
 res://Entities/Character/Player/player.tscn
 res://Entities/Character/Player/player.gd
 res://Scene/GameplayScene/gameplay_scene.tscn
+res://Entities/Character/orb/orb.tscn
+res://Entities/Character/orb/orb.gd
 res://Scene/Main/main.tscn
 res://Common/falling_object/class/falling_object.tscn
-res://Entities/Character/orb/orb.tscn
 res://Entities/falling_object/asteroids.tscn
 res://Entities/falling_object/coins.tscn
 res://Entities/falling_object/coins.gd
-res://Autolaud/ref_of_object/referentiel.gd

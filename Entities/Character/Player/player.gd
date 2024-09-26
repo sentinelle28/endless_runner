@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 @export var health_shower:TextureProgressBar
+@export var coins_shower:TextureProgressBar
 var coins:int = 0
 
 const JUMP_VELOCITY:int = 40000
@@ -30,5 +31,7 @@ func _take_dmg(dmg:int)->void:
 func _add_coins()->void:
 	coins += 1
 	if coins > 3:
-		coins = 3
+		coins = 0
+		Score.score_mult += 1
 		Score._add_score(100)
+	coins_shower.value = coins

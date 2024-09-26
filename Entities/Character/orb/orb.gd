@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var possible_points:Node2D
+@export var bullet_stocker:Node
 var possible_location:Array[float] = []
 
 
@@ -9,7 +10,7 @@ var possible_location:Array[float] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_get_points()
-	_act()
+	$Timer.start(get_cooldown())
 
 func _get_points()->void: #init
 	for points:Node2D in possible_points.get_children():
@@ -17,21 +18,21 @@ func _get_points()->void: #init
 
 
 func _on_timer_timeout() -> void:
-	$Timer.start(_get_cooldown())
+	$Timer.start(get_cooldown())
 	_act()
 	_idle()
 	
 
-func _get_cooldown()->float:
+func get_cooldown()->float:
 	return Speed.cooldown
 
 func _spawn(path_to_object:String)->void:
 	var object:Falling_Object = load(path_to_object).instantiate()
 	var pos :Vector2 = possible_points.get_children().pick_random().global_position
 	
-	_move(_get_pos(pos),_get_cooldown())
-	await get_tree().create_timer(_get_cooldown()).timeout # to change
-	add_child(object)
+	_move(_get_pos(pos),get_cooldown())
+	await get_tree().create_timer(get_cooldown()).timeout # to change
+	bullet_stocker.add_child(object)
 	object.global_position = pos
 
 func _act()->void:
@@ -43,7 +44,7 @@ func _idle()->void:
 	# move idle
 	var nb_time:int = randi_range(1,5)
 	for i:int in range(nb_time):
-		var new_array:Array[float] = Array(possible_location)
+		var new_array:Array[float] = possible_location.duplicate()
 		new_array.erase(global_position.y)
 		var pos:Vector2 = Vector2(global_position.x,new_array.pick_random())
 		var duration:float = _get_action_cooldown()/nb_time

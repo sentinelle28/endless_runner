@@ -1,6 +1,7 @@
+Node
+TextureProgressBar
 AnimatedSprite2D
 CollisionShape2D
-TextureProgressBar
 Sprite2D
 VBoxContainer
 Label
