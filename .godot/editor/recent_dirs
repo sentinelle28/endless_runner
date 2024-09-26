@@ -1,5 +1,7 @@
-res://asset/wish_object/planet/Planets
+res://asset/coins/Purple
 res://Entities/falling_object
+res://asset/coins/Red
+res://asset/wish_object/planet/Planets
 res://Autolaud/paused_menu
 res://Autolaud/ref_of_object
 res://Common/deleter

@@ -1,7 +1,8 @@
 extends Node
 #name:ref
 var array_ref:Dictionary = {
-	"asteroids":"res://Entities/falling_object/asteroids.tscn"
+	"asteroids":"res://Entities/falling_object/asteroids.tscn",
+	"coins":"res://Entities/falling_object/coins.tscn"
 
 
 

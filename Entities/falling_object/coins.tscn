@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://smmvoet8slvo"]
+
+[ext_resource type="PackedScene" uid="uid://dnelvc4o1dvxr" path="res://Common/falling_object/class/falling_object.tscn" id="1_n22qk"]
+[ext_resource type="Script" path="res://Entities/falling_object/coins.gd" id="2_lxf54"]
+[ext_resource type="Texture2D" uid="uid://b61v5xkjv6fsg" path="res://asset/coins/Purple/purple_crystal_0000.png" id="3_oejvf"]
+[ext_resource type="Texture2D" uid="uid://vqstnrib30s2" path="res://asset/coins/Purple/purple_crystal_0001.png" id="4_3w1y0"]
+[ext_resource type="Texture2D" uid="uid://b3u11dmg1fylj" path="res://asset/coins/Purple/purple_crystal_0002.png" id="5_udmj5"]
+[ext_resource type="Texture2D" uid="uid://ctlx4wrvd8xka" path="res://asset/coins/Purple/purple_crystal_0003.png" id="6_sxhvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwuf8"]
+size = Vector2(32, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8uerw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oejvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3w1y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_udmj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sxhvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Falling_object" instance=ExtResource("1_n22qk")]
+script = ExtResource("2_lxf54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_iwuf8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(9.53674e-07, -0.500001)
+scale = Vector2(0.75, 0.765625)
+sprite_frames = SubResource("SpriteFrames_8uerw")
+autoplay = "default"
+frame_progress = 0.326785
