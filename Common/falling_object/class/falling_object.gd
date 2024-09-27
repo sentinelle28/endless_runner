@@ -15,8 +15,4 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body._take_dmg(1)
-		
-		#no bullet
-		for child in get_parent().get_children():
-			if child is Falling_Object:
-				get_parent().remove_child(child)
+		get_parent().call_deferred("remove_child",self)

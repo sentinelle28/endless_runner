@@ -21,11 +21,13 @@ func _move(delta:float)->void:
 	move_and_slide()
 
 func _take_dmg(dmg:int)->void:
-	health -= dmg
-	health_shower.value = health
-	if health <= 0:
-		get_tree().paused = true
-		DeathMenu._show_end()
+	if $invicibility.time_left == 0:
+		$invicibility.start(2.5)
+		health -= dmg
+		health_shower.value = health
+		if health <= 0:
+			get_tree().paused = true
+			DeathMenu._show_end()
 		
 
 func _add_coins()->void:

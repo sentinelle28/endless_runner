@@ -47,3 +47,14 @@ sprite_frames = SubResource("SpriteFrames_8j3of")
 animation = &"new"
 autoplay = "new"
 frame_progress = 0.457807
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-16, 1)
+gravity = Vector2(-460, 0)
+scale_amount_min = 1.2
+scale_amount_max = 1.2
+
+[node name="invicibility" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true

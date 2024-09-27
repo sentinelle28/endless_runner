@@ -1,3 +1,5 @@
+Timer
+CPUParticles2D
 Node
 TextureProgressBar
 AnimatedSprite2D
@@ -8,8 +10,5 @@ Label
 Panel
 Area2D
 CharacterBody2D
-Timer
 Node2D
 StaticBody2D
-ParallaxBackground
-ParallaxLayer
