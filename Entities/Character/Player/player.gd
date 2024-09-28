@@ -18,6 +18,7 @@ func _move(delta:float)->void:
 
 func _take_dmg(dmg:int)->void:
 	if $invicibility.time_left == 0:
+		$AnimationPlayer.play("hurt")
 		$invicibility.start(2.5)
 		health -= dmg
 		if health <= 0:
