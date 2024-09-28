@@ -1,15 +1,11 @@
 extends CharacterBody2D
 
 class_name Player
-@export var health_shower:TextureProgressBar
-@export var coins_shower:TextureProgressBar
 var coins:int = 0
 
 const JUMP_VELOCITY:int = 40000
 var health:int = 3
 
-func _ready() -> void:
-	health_shower.value = health
 
 func _process(delta: float) -> void:
 	_move(delta)
@@ -24,7 +20,6 @@ func _take_dmg(dmg:int)->void:
 	if $invicibility.time_left == 0:
 		$invicibility.start(2.5)
 		health -= dmg
-		health_shower.value = health
 		if health <= 0:
 			get_tree().paused = true
 			DeathMenu._show_end()
@@ -36,4 +31,8 @@ func _add_coins()->void:
 		coins = 0
 		Score.score_mult += 1
 		Score._add_score(100)
-	coins_shower.value = coins
+
+
+func _on_timer_timeout() -> void:
+	Score._add_score(10)
+	$"../UI/Timer".start(3)

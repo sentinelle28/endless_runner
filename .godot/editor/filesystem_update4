@@ -1,9 +1,14 @@
-res://Entities/Character/orb/orb.tscn
+res://Scene/GameplayScene/gameplay_scene.tscn
+res://Scene/GameplayScene/health_manager.gd
 res://Scene/Main/main.tscn
 res://Entities/Character/Player/player.tscn
-res://Scene/GameplayScene/gameplay_scene.tscn
 res://Common/falling_object/class/falling_object.tscn
+res://Entities/Character/orb/orb.tscn
 res://Entities/falling_object/asteroids.tscn
 res://Entities/falling_object/coins.tscn
-res://Common/falling_object/class/falling_object.gd
+res://Scene/GameplayScene/ui.gd
+res://Entities/Character/orb/orb.gd
+res://Autolaud/Score/Score.tscn
 res://Entities/Character/Player/player.gd
+res://Scene/GameplayScene/manager.gd
+res://Autolaud/Speed/Speed.gd

@@ -37,7 +37,7 @@ func _spawn(path_to_object:String)->void:
 	new_array.erase(previous_location)
 	var y_pick:float = new_array.pick_random()
 	bullet_stocker.add_child(object)
-	object.global_position = Vector2(664,y_pick)
+	object.global_position = Vector2(possible_points.get_children()[0].global_position.x,y_pick)
 	previous_location = y_pick
 
 func _act()->void:
