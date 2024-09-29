@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://1jdx0ga0hl5y"]
+
+[ext_resource type="Script" path="res://Entities/bullet/bullet.gd" id="1_q8u0b"]
+[ext_resource type="Texture2D" uid="uid://b6elemgcv3kdo" path="res://asset/bullet/All_Fire_Bullet_Pixel_16x16.png" id="2_ulci8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vajti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr5xm"]
+size = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6tld"]
+atlas = ExtResource("2_ulci8")
+region = Rect2(416, 0, 16, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1l6k"]
+atlas = ExtResource("2_ulci8")
+region = Rect2(432, 0, 16, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im6x8"]
+atlas = ExtResource("2_ulci8")
+region = Rect2(448, 0, 16, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exnpq"]
+atlas = ExtResource("2_ulci8")
+region = Rect2(464, 0, 16, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2uvyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6tld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1l6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im6x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exnpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bullet" type="CharacterBody2D"]
+script = ExtResource("1_q8u0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vajti")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fr5xm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, -8)
+scale = Vector2(4.30769, 4.30769)
+sprite_frames = SubResource("SpriteFrames_2uvyd")
+autoplay = "default"
+frame_progress = 0.0372673
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

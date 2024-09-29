@@ -15,4 +15,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body._take_dmg(1)
-		get_parent().call_deferred("remove_child",self)
+		_death()
+
+func _death()->void:
+	get_parent().call_deferred("remove_child",self)

@@ -10,6 +10,9 @@ func _process(_delta: float) -> void:
 		anim.play("blink")
 		await anim.animation_finished
 		player.coins = 0
+		Score.score_mult += 1
+		Score._add_score(100)
+		
 		
 	for i in range(get_child_count()):
 		if i < player.coins:

@@ -1,8 +1,13 @@
+res://asset/background/stringstar fields
+res://Entities/falling_object
+res://asset/wish_object/planet/Planets
+res://asset/sound/sfx
+res://Autolaud/explosion
+res://asset/bullet
+res://Entities/bullet
 res://asset/coins/Purple
 res://asset/effect/Free Smoke Fx Pixel 2
-res://Entities/falling_object
 res://asset/coins/Red
-res://asset/wish_object/planet/Planets
 res://Autolaud/paused_menu
 res://Autolaud/ref_of_object
 res://Common/deleter

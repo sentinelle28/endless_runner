@@ -25,12 +25,18 @@ Speed="*res://Autolaud/Speed/Speed.gd"
 Score="*res://Autolaud/Score/Score.tscn"
 Referentiel="*res://Autolaud/ref_of_object/referentiel.gd"
 DeathMenu="*res://Autolaud/paused_menu/Death_Menu.tscn"
+Explosion="*res://Autolaud/explosion/explosion.tscn"
 
 [input]
 
 reset={
 "deadzone": 0.5,
 "events": []
+}
+shoot={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(172, 6),"global_position":Vector2(181, 52),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
 }
 
 [rendering]
