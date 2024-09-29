@@ -1,3 +1,5 @@
+res://asset/orb
+res://asset/player/witch_on_broomstick-1.2/PNG/48x64_scale
 res://asset/background/stringstar fields
 res://Entities/falling_object
 res://asset/wish_object/planet/Planets
@@ -12,7 +14,6 @@ res://Autolaud/paused_menu
 res://Autolaud/ref_of_object
 res://Common/deleter
 res://Entities/Character/orb
-res://asset/orb
 res://Autolaud/Score
 res://Autolaud/Speed
 res://Common/falling_object/class

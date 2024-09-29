@@ -151,18 +151,18 @@ z_index = -1
 motion_mirroring = Vector2(1980, 1980)
 
 [node name="background_1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(344, 265)
-scale = Vector2(2.77778, 2.03333)
+position = Vector2(344, 224)
+scale = Vector2(2.66667, 2.48889)
 texture = ExtResource("3_fiqyx")
 
 [node name="background_2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(344, 265)
-scale = Vector2(2.77778, 2.03333)
+position = Vector2(344, 224)
+scale = Vector2(2.667, 2.489)
 texture = ExtResource("4_cs33h")
 
 [node name="background_3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(344, 265)
-scale = Vector2(2.77778, 2.03333)
+position = Vector2(340, 232)
+scale = Vector2(2.91667, 2.489)
 texture = ExtResource("5_s61u0")
 
 [node name="bounds" type="StaticBody2D" parent="."]

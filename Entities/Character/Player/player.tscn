@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmkt6h1e2p06b"]
+[gd_scene load_steps=16 format=3 uid="uid://bmkt6h1e2p06b"]
 
 [ext_resource type="Script" path="res://Entities/Character/Player/player.gd" id="1_52mmu"]
 [ext_resource type="Texture2D" uid="uid://c4dr0vaof0wm2" path="res://asset/player/witch_on_broomstick-1.2/PNG/24x32/witch-001-NESW.png" id="1_rdial"]
@@ -38,6 +38,10 @@ animations = [{
 "name": &"new",
 "speed": 5.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_7q7c3"]
+offsets = PackedFloat32Array(0, 0.806667)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_bpcv1"]
 length = 0.001
@@ -90,9 +94,11 @@ frame_progress = 0.457807
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(-16, 1)
+lifetime = 0.8
 gravity = Vector2(-460, 0)
 scale_amount_min = 1.2
 scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_7q7c3")
 
 [node name="invicibility" type="Timer" parent="."]
 wait_time = 2.5
