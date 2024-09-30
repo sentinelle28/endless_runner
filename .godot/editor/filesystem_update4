@@ -3,7 +3,5 @@ res://Entities/Character/Player/player.tscn
 res://Scene/GameplayScene/gameplay_scene.tscn
 res://Entities/Character/orb/orb.tscn
 res://Common/falling_object/class/falling_object.tscn
-res://Entities/falling_object/lava.tscn
-res://Autolaud/SceneTransition/scene_transition.tscn
-res://Scene/Main/rotate_anim.gd
-res://Scene/GameplayScene/infinite_background.gd
+res://Autolaud/main_music/main_music.tscn
+res://Autolaud/paused_menu/Death_Menu.tscn

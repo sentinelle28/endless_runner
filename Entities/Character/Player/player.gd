@@ -12,7 +12,7 @@ var health:int = 3
 func _process(delta: float) -> void:
 	_move(delta)
 	_shoot()
-
+	_accelerate()
 
 func _move(delta:float)->void:
 	var direction:float = Input.get_axis("ui_up","ui_down")
@@ -23,6 +23,7 @@ func _take_dmg(dmg:int)->void:
 	if $invicibility.time_left == 0:
 		$AnimationPlayer.play("hurt")
 		$invicibility.start(2.5)
+		$AnimationPlayer.animation_set_next("hurt","invicibility")
 		$hit.play()
 		health -= dmg
 		if health <= 0:
@@ -35,6 +36,9 @@ func _add_coins()->void:
 	coins += 1
 	if coins == 3:
 		$mult_up.play()
+		Score.score_mult += 1
+		Score._add_score(100)
+		_reset_coin()
 
 
 func _on_timer_timeout() -> void:
@@ -48,3 +52,14 @@ func _shoot()->void:
 		bullet.global_position = global_position + Vector2(10,0)
 		coins -= 1
 		$shoot.play()
+
+func _reset_coin()->void:
+	coins = 0
+
+func _accelerate()->void:
+	if Input.is_action_just_pressed("ui_right"):
+		Score._add_mult(1)
+		Speed.speed_value += 600
+	elif Input.is_action_just_released("ui_right"):
+		Score._add_mult(-1)
+		Speed.speed_value -= 600

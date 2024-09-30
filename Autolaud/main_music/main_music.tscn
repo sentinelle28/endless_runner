@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbo1i6yvxu64g"]
+
+[ext_resource type="AudioStream" uid="uid://4grqiochh1pp" path="res://asset/sound/music/Stream Loops 2024-08-13.ogg" id="1_vo4e6"]
+
+[node name="MainMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_vo4e6")
+autoplay = true
+parameters/looping = true

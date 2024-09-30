@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmkt6h1e2p06b"]
+[gd_scene load_steps=17 format=3 uid="uid://bmkt6h1e2p06b"]
 
 [ext_resource type="Script" path="res://Entities/Character/Player/player.gd" id="1_52mmu"]
 [ext_resource type="Texture2D" uid="uid://c4dr0vaof0wm2" path="res://asset/player/witch_on_broomstick-1.2/PNG/24x32/witch-001-NESW.png" id="1_rdial"]
@@ -73,10 +73,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ebcuo"]
+resource_name = "invicibility"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rjhcx"]
 _data = {
 "RESET": SubResource("Animation_bpcv1"),
-"hurt": SubResource("Animation_jpk8c")
+"hurt": SubResource("Animation_jpk8c"),
+"invicibility": SubResource("Animation_ebcuo")
 }
 
 [node name="Player" type="CharacterBody2D"]

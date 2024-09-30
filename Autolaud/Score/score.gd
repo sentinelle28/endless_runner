@@ -38,3 +38,6 @@ func get_highscore()->int:
 	
 func _update_mult()->void:
 	score_mult += 1
+
+func _add_mult(value:int)->void:
+	score_mult += value
