@@ -10,9 +10,13 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_ndmmv")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="collision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u0hgp")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="point" type="Area2D" parent="."]
+monitorable = false
+
+[connection signal="body_entered" from="collision" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="point" to="." method="_on_point_body_exited"]

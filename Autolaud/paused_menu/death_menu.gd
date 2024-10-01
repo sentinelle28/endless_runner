@@ -7,6 +7,7 @@ func _show_end()->void:
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
+		hide()
 		Score._reset_score()
 		if get_tree().paused ==true:
 			get_tree().paused = false

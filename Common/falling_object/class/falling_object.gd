@@ -19,3 +19,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _death()->void:
 	get_parent().call_deferred("remove_child",self)
+
+
+func _on_point_body_exited(body: Node2D) -> void:
+	if body is Player:
+		Score._add_score(100)

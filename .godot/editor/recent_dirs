@@ -1,8 +1,10 @@
+C:/Users/augus/Downloads/test
+res://asset/player/witch_on_broomstick-1.2/PNG/48x64_scale
+res://asset/orb
+res://Scene/Main
+res://asset/background/stringstar fields
 res://Autolaud/main_music
 res://asset/sound/music
-res://asset/orb
-res://asset/player/witch_on_broomstick-1.2/PNG/48x64_scale
-res://asset/background/stringstar fields
 res://Entities/falling_object
 res://asset/wish_object/planet/Planets
 res://asset/sound/sfx
@@ -19,4 +21,3 @@ res://Entities/Character/orb
 res://Autolaud/Score
 res://Autolaud/Speed
 res://Common/falling_object/class
-res://asset/player/witch_on_broomstick-1.2/PNG/24x32

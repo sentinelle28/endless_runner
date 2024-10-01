@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqtvtds8l127s"]
+[gd_scene load_steps=5 format=3 uid="uid://bqtvtds8l127s"]
 
 [ext_resource type="PackedScene" uid="uid://dnelvc4o1dvxr" path="res://Common/falling_object/class/falling_object.tscn" id="1_2ypa3"]
 [ext_resource type="Texture2D" uid="uid://bix428arql87d" path="res://asset/wish_object/planet/Planets/Black_hole.png" id="2_wvm5b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqit2"]
-size = Vector2(45, 46)
+[sub_resource type="CircleShape2D" id="CircleShape2D_61uwd"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byho7"]
+radius = 40.0
 
 [node name="Falling_object" instance=ExtResource("1_2ypa3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-1.5, 1)
-shape = SubResource("RectangleShape2D_gqit2")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision" index="0"]
+shape = SubResource("CircleShape2D_61uwd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_wvm5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="point" index="0"]
+shape = SubResource("CircleShape2D_byho7")
+debug_color = Color(0.958588, 0, 0.526315, 0.42)

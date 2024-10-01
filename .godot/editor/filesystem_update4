@@ -1,7 +1,16 @@
+res://Scene/Main/cinema.tscn
+res://Scene/Main/cinema.gd
 res://Scene/Main/main.tscn
+res://Scene/Main/main.gd
 res://Entities/Character/Player/player.tscn
 res://Scene/GameplayScene/gameplay_scene.tscn
 res://Entities/Character/orb/orb.tscn
 res://Common/falling_object/class/falling_object.tscn
-res://Autolaud/main_music/main_music.tscn
+res://Common/falling_object/class/falling_object.gd
+res://Entities/falling_object/asteroids.tscn
+res://Entities/falling_object/black_hole.tscn
+res://Entities/falling_object/ice.tscn
+res://Entities/falling_object/lava.tscn
+res://Entities/falling_object/coins.tscn
 res://Autolaud/paused_menu/Death_Menu.tscn
+res://Autolaud/paused_menu/death_menu.gd
